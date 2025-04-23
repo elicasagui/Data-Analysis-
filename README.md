@@ -26,21 +26,15 @@ This repository contains an end-to-end exploratory data analysis (EDA) of standa
 
 ## Setup & Installation
 1. **Clone this repository**  
-   ```bash
-   git clone https://github.com/your-username/nyc-schools-eda.git
+ 
+   git clone https://github.com/elicasagui/nyc-schools-eda.git
    cd nyc-schools-eda
 2. **Create a virtual environment**
 
-bash
-Copiar
-Editar
 python3 -m venv venv
 source venv/bin/activate
 3. **Install dependencies**
 
-bash
-Copiar
-Editar
 pip install --upgrade pip
 pip install -r requirements.txt
 ## How to Run
