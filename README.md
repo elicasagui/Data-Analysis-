@@ -33,6 +33,7 @@ This repository contains an end-to-end exploratory data analysis (EDA) of standa
 
 python3 -m venv venv
 source venv/bin/activate
+
 3. **Install dependencies**
 
 pip install --upgrade pip
