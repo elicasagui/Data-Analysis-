@@ -1,72 +1,65 @@
 # NYC Public Schools Test Results – Exploratory Data Analysis
-Project Overview
+
+## Project Overview
 This repository contains an end-to-end exploratory data analysis (EDA) of standardized test results for New York City public schools. As a Data Scientist, the goal of this project is to uncover trends, identify strengths and weaknesses across districts, and generate actionable insights to inform educational stakeholders.
 
-# Contents
-bash
-Copiar código
-├── data/
-│   └── schools.csv           # Raw test scores and school metadata
-├── notebooks/
+## Contents
+├── data/  
+│   └── schools.csv           # Raw test scores and school metadata  
+├── notebooks/  
 │   └── exploratory_analysis.ipynb  
-│       # Jupyter notebook detailing the full EDA workflow
-├── figures/
-│   └── ...                   # Generated charts and visualizations
-├── requirements.txt          # Python package dependencies
-└── README.txt                # This file
-# Data Description
-schools.csv
-Contains school-level test performance for the latest academic year, including:
+│       # Jupyter notebook detailing the full EDA workflow  
+├── figures/  
+│   └── ...                   # Generated charts and visualizations  
+├── requirements.txt          # Python package dependencies  
+└── README.txt                # This file  
 
-school_id — Unique identifier for each school
+## Data Description
+- **schools.csv**  
+  Contains school-level test performance for the latest academic year, including:  
+  - `school_id`         — Unique identifier for each school  
+  - `district`          — NYC school district code  
+  - `math_score`        — Average math test score  
+  - `reading_score`     — Average reading test score  
+  - `attendance_rate`   — Annual attendance percentage  
+  - _… plus additional demographic and performance metrics._
 
-district — NYC school district code
-
-math_score — Average math test score
-
-reading_score — Average reading test score
-
-attendance_rate — Annual attendance percentage
-
-… plus additional demographic and performance metrics.
-
-# Setup & Installation
-Clone this repository
-
-bash
-Copiar código
-git clone https://github.com/your-username/nyc-schools-eda.git
-cd nyc-schools-eda
-Create a virtual environment
+## Setup & Installation
+1. **Clone this repository**  
+   ```bash
+   git clone https://github.com/your-username/nyc-schools-eda.git
+   cd nyc-schools-eda
+2. **Create a virtual environment**
 
 bash
-Copiar código
+Copiar
+Editar
 python3 -m venv venv
 source venv/bin/activate
-Install dependencies
+3. **Install dependencies**
 
 bash
-Copiar código
+Copiar
+Editar
 pip install --upgrade pip
 pip install -r requirements.txt
-How to Run
-Launch Jupyter Notebook
+## How to Run
+1. **Launch Jupyter Notebook**
 
-bash
-Copiar código
 jupyter notebook
-Open notebooks/exploratory_analysis.ipynb.
 
-Execute all cells in order to reproduce data cleaning, analysis, and visualization steps.
+2. **Open** notebooks/exploratory_analysis.ipynb
 
-# Analysis Highlights
-Data Cleaning & Validation
+3. **Execute all cells** to reproduce data cleaning, analysis, and visualization steps.
+
+**Analysis Highlights**
+**Data Cleaning & Validation**
 
 Handled missing values and outliers
 
 Standardized district codes and school names
 
-Exploratory Visualizations
+**Exploratory Visualizations**
 
 Distributions of math and reading performance
 
@@ -74,7 +67,7 @@ Attendance vs. test scores correlation
 
 District-level comparison using boxplots and heatmaps
 
-# Key Findings
+**Key Findings**
 
 Districts X and Y exhibit the highest reading score variability
 
@@ -82,12 +75,12 @@ Positive correlation (r ≈ 0.65) between attendance rate and overall performanc
 
 Underperforming schools share common demographic characteristics
 
-# Reproducibility & Extensibility
+**Reproducibility & Extensibility**
 All data processing and visualization code is contained in the notebook.
 
 To adapt this analysis to future years or different metrics, replace data/schools.csv with the updated dataset and rerun the notebook.
 
-Dependencies
+**Dependencies**
 Python 3.8+
 
 pandas
@@ -102,12 +95,12 @@ jupyter
 
 (See requirements.txt for exact versions.)
 
-# License
+**License**
 This project is released under the MIT License. See LICENSE for details.
 
-# Contact
+**Contact**
 For questions or collaboration inquiries, please contact:
 Eliecer Castro
-– Data Scientist jr.
-– elicasagui@gmail.com
-– GitHub: https://github.com/elicasagui
+– Data Scientist
+– your.email@example.com
+– GitHub: https://github.com/your-username
