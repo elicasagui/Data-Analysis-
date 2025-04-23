@@ -96,6 +96,9 @@ This project is released under the MIT License. See LICENSE for details.
 **Contact**
 For questions or collaboration inquiries, please contact:
 Eliecer Castro
+
 – Data Scientist
+
 – elicasagui@gmail.com
+
 – GitHub: https://github.com/elicasagui
