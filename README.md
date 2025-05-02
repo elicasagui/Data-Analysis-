@@ -4,15 +4,17 @@
 This repository contains an end-to-end exploratory data analysis (EDA) of standardized test results for New York City public schools. As a Data Scientist, the goal of this project is to uncover trends, identify strengths and weaknesses across districts, and generate actionable insights to inform educational stakeholders.
 
 ## Contents
+Data-Analysis-/
+│  
 ├── data/  
-│   └── schools.csv           # Raw test scores and school metadata  
-├── notebooks/  
-│   └── exploratory_analysis.ipynb  
-│       # Jupyter notebook detailing the full EDA workflow  
-├── figures/  
-│   └── ...                   # Generated charts and visualizations  
-├── requirements.txt          # Python package dependencies  
-└── README.txt                # This file  
+│   └── schools.csv
+│   
+├── notebooks/
+│   └── exploratory_analysis.ipynb
+│
+├── requirements.txt
+│
+└── README.md 
 
 ## Data Description
 - **schools.csv**  
@@ -25,27 +27,18 @@ This repository contains an end-to-end exploratory data analysis (EDA) of standa
   - _… plus additional demographic and performance metrics._
 
 ## Setup & Installation
-1. **Clone this repository**  
- 
-   git clone https://github.com/elicasagui/nyc-schools-eda.git
-   cd nyc-schools-eda
-2. **Create a virtual environment**
 
-python3 -m venv venv
-source venv/bin/activate
+1. **Install dependencies**
 
-3. **Install dependencies**
-
-pip install --upgrade pip
 pip install -r requirements.txt
 ## How to Run
-1. **Launch Jupyter Notebook**
+2. **Launch Jupyter Notebook**
 
 jupyter notebook
 
-2. **Open** notebooks/exploratory_analysis.ipynb
+3. **Open** notebooks/exploratory_analysis.ipynb
 
-3. **Execute all cells** to reproduce data cleaning, analysis, and visualization steps.
+4. **Execute all cells** to reproduce data cleaning, analysis, and visualization steps.
 
 **Analysis Highlights**
 **Data Cleaning & Validation**
@@ -91,7 +84,7 @@ jupyter
 (See requirements.txt for exact versions.)
 
 **License**
-This project is released under the MIT License. See LICENSE for details.
+This project part of Data Camp scientist's course.
 
 **Contact**
 For questions or collaboration inquiries, please contact:
@@ -101,4 +94,4 @@ Eliecer Castro
 
 – elicasagui@gmail.com
 
-– GitHub: [https://github.com/elicasagui](https://github.com/elicasagui/Data-Analysis-.git)
+– GitHub: https://github.com/elicasagui/Data-Analysis-.git
