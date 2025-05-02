@@ -4,17 +4,18 @@
 This repository contains an end-to-end exploratory data analysis (EDA) of standardized test results for New York City public schools. As a Data Scientist, the goal of this project is to uncover trends, identify strengths and weaknesses across districts, and generate actionable insights to inform educational stakeholders.
 
 ## Contents
+```
 Data-Analysis-/
-│  
-├── data/  
+├── data/
 │   └── schools.csv
-│   
+│
 ├── notebooks/
 │   └── exploratory_analysis.ipynb
 │
 ├── requirements.txt
 │
-└── README.md 
+└── README.md
+```
 
 ## Data Description
 - **schools.csv**  
@@ -84,7 +85,7 @@ jupyter
 (See requirements.txt for exact versions.)
 
 **License**
-This project part of Data Camp scientist's course.
+This project from Data Camp scientist's course.
 
 **Contact**
 For questions or collaboration inquiries, please contact:
