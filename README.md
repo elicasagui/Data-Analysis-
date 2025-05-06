@@ -1,21 +1,40 @@
 # NYC Public Schools Test Results – Exploratory Data Analysis
 
 ## Project Overview
-This repository contains an end-to-end exploratory data analysis (EDA) of standardized test results for New York City public schools. As a Data Scientist, the goal of this project is to uncover trends, identify strengths and weaknesses across districts, and generate actionable insights to inform educational stakeholders.
+This project analyzes standardized test results from New York City public schools.It includes data cleaning, exploratory data analysis, and visualization using Python libraries such as pandas, matplotlib, and seaborn.The goal is to uncover patterns in student performance across boroughs, grades, and demographic groups.
 
 ## Contents
 ```
-Data-Analysis-/
-├── data/
+# NYC_Public_Schools_Test_Results_Data_Analysis/
+├── data/                 # CSV files go here
 │   └── schools.csv
 │
-├── notebooks/
+├── notebooks/            # Jupyter notebooks for EDA and testing
 │   └── exploratory_analysis.ipynb
-│
-├── requirements.txt
-│
-└── README.md
+│   └── test         
+├── src/                  # Source code for analysis
+    ├── __init__.py                # Makes src a Python package
+    ├── load_data.py               # Functions to load and validate datasets
+    ├── clean_data.py              # Cleaning and preprocessing functions
+    ├── analyze.py                 # EDA and summary statistics
+    ├── visualize.py               # Plotting functions (e.g., seaborn/matplotlib)
+    └── utils.py                   # Helper functions (e.g., file paths, formatting)
+├── main.py               # Main execution script
+├── requirements.txt      # Python dependencies
+└── README.txt            # This file
 ```
+## Data Instructions
+
+**1. Visit NYC Open Data portal**
+ https://opendata.cityofnewyork.us/
+
+**2. Search and download relevant datasets (e.g., test scores)**
+
+**3. Move the downloaded CSV files into the `data/` directory**
+(create the folder if it does not exist)
+
+mkdir -p data/
+mv ~/Downloads/*.csv data/
 
 ## Data Description
 - **schools.csv**  
@@ -27,50 +46,48 @@ Data-Analysis-/
   - `attendance_rate`   — Annual attendance percentage  
   - _… plus additional demographic and performance metrics._
 
-## Setup & Installation
+## Installation Steps
 
-1. **Install dependencies**
+**1. Clone the repository**
+```
+git clone https://github.com/elicasagui/NYC_Public_Schools_Test_Results_Data_Analysis.git
+cd NYC_Public_Schools_Test_Results_Data_Analysis
+```
+**2. (Optional) Create and activate a virtual environment**
+```
+python -m venv venv
+```
+-On Windows
+```
+venv\Scripts\activate
+```
+-On macOS/Linux
+```
+source venv/bin/activate
+```
 
+**3. Install required packages**
+```
 pip install -r requirements.txt
-## How to Run
-2. **Launch Jupyter Notebook**
+```
 
-jupyter notebook
+**4. Run main script to verify setup**
+```
+python main.py
+```
+## RUNNING TESTS
 
-3. **Open** notebooks/exploratory_analysis.ipynb
+ Make sure pytest is installed
+ ```
+pip install pytest
+```
 
-4. **Execute all cells** to reproduce data cleaning, analysis, and visualization steps.
+Run tests (if test scripts are provided)
+pytest tests/
 
-**Analysis Highlights**
-**Data Cleaning & Validation**
-
-Handled missing values and outliers
-
-Standardized district codes and school names
-
-**Exploratory Visualizations**
-
-Distributions of math and reading performance
-
-Attendance vs. test scores correlation
-
-District-level comparison using boxplots and heatmaps
-
-**Key Findings**
-
-Districts X and Y exhibit the highest reading score variability
-
-Positive correlation (r ≈ 0.65) between attendance rate and overall performance
-
-Underperforming schools share common demographic characteristics
-
-**Reproducibility & Extensibility**
-All data processing and visualization code is contained in the notebook.
-
-To adapt this analysis to future years or different metrics, replace data/schools.csv with the updated dataset and rerun the notebook.
 
 **Dependencies**
-Python 3.8+
+Python
 
 pandas
 
@@ -95,4 +112,4 @@ Eliecer Castro
 
 – elicasagui@gmail.com
 
-– GitHub: https://github.com/elicasagui/Data-Analysis-.git
+– GitHub repository's link: https://github.com/elicasagui/NYC_Public_Schools_Test_Results_Data_Analysis.git
