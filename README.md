@@ -1,7 +1,7 @@
 # NYC Public Schools Test Results – Exploratory Data Analysis
 
 ## Project Overview
-This project analyzes standardized test results from New York City public schools.It includes data cleaning, exploratory data analysis, and visualization using Python libraries such as pandas, matplotlib, and seaborn.The goal is to uncover patterns in student performance across boroughs, grades, and demographic groups.
+This project analyzes standardized test results from New York City public schools.It includes exploratory data analysis, and visualization using Python libraries such as pandas, matplotlib, and seaborn.The goal is to uncover patterns in student performance across boroughs, grades, and demographic groups.
 
 ## Contents
 ```
