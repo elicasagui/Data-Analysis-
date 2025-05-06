@@ -59,13 +59,28 @@ python -m venv venv
 ```
 -On Windows
 ```
-venv\Scripts\activate
+.\venv\Scripts\Activate
 ```
 -On macOS/Linux
 ```
 source venv/bin/activate
 ```
+**If PowerShell’s execution policy is blocking script activation for security reasons**
+![image](https://github.com/user-attachments/assets/71539b38-2686-4fe1-99f4-e9dd4dcd2b4c)
 
+**Quick and Safe Fix (temporary for current session only)**
+
+Open PowerShell as Administrator
+(Right-click PowerShell → “Run as administrator”).
+
+Run this command to temporarily allow scripts only for this session:
+```
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+Now activate your virtual environment again:
+```
+.\venv\Scripts\Activate
+```
 **3. Install required packages**
 ```
 pip install -r requirements.txt
