@@ -90,6 +90,44 @@ pip install -r requirements.txt
 ```
 python main.py
 ```
+**5 Launch Jupyter Notebook**
+```
+jupyter notebook
+```
+
+This will open a tab in your browser with an interface where you can navigate to the repository.
+![image](https://github.com/user-attachments/assets/7745b2fd-dd66-4c04-b812-3c9874702aeb)
+
+
+**6 Open and run the notebook**
+```
+notebooks/exploratory_analysis.ipynb
+```
+## Proyect Questions
+**1.** Which NYC schools have the best math results?
+
+**2.** What are the top 10 performing schools based on the combined SAT scores?
+
+**3.** wich single borough has the largest standard deviation in the combined SAT score?
+
+## Key Insights
+
+**1.** 
+- The best math results in NYC schools are:
+  
+![image](https://github.com/user-attachments/assets/65fa491f-3134-447e-a0ff-d1b0a3c2d129)
+
+**2.** 
+- The top 10 performing schools based on the combined SAT scores are: 
+![image](https://github.com/user-attachments/assets/a450a10a-be72-40f9-8a4a-dffeed5694b4)
+
+**3.**
+- The largest standard deviation in the combined SAT score is:
+  ![image](https://github.com/user-attachments/assets/e22e0cbd-35a5-489f-8693-e5ec3dac8d29)
+
+
+Full analysis available in [exploratory_analysis.ipynb](notebooks/exploratory_analysis.ipynb).
+
 ## RUNNING TESTS
 
  Make sure pytest is installed
