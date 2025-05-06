@@ -108,7 +108,7 @@ notebooks/exploratory_analysis.ipynb
 
 **2.** What are the top 10 performing schools based on the combined SAT scores?
 
-**3.** wich single borough has the largest standard deviation in the combined SAT score?
+**3.** Wich single borough has the largest standard deviation in the combined SAT score?
 
 ## Key Insights
 
