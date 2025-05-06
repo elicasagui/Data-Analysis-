@@ -86,7 +86,7 @@ Run tests (if test scripts are provided)
 pytest tests/
 
 
-**Dependencies**
+## Dependencies
 Python
 
 pandas
@@ -101,10 +101,10 @@ jupyter
 
 (See requirements.txt for exact versions.)
 
-**License**
+## License
 This project from Data Camp scientist's course.
 
-**Contact**
+## Contact
 For questions or collaboration inquiries, please contact:
 Eliecer Castro
 
