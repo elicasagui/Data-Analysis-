@@ -66,7 +66,8 @@ python -m venv venv
 source venv/bin/activate
 ```
 **If PowerShell’s execution policy is blocking script activation for security reasons**
-![image](https://github.com/user-attachments/assets/71539b38-2686-4fe1-99f4-e9dd4dcd2b4c)
+
+![setup error 1](https://github.com/user-attachments/assets/6acb5759-9314-48a3-82f4-beb5d5a4c98e)
 
 **Quick and Safe Fix (temporary for current session only)**
 
@@ -103,7 +104,7 @@ This will open a new browser tab with an interface that lets you navigate throug
 ```
 notebooks/exploratory_analysis.ipynb
 ```
-## Proyect Questions
+## Project Questions
 **1.** Which NYC schools have the best math results?
 
 **2.** What are the top 10 performing schools based on the combined SAT scores?
@@ -129,8 +130,9 @@ pip install pytest
 ```
 
 Run tests (if test scripts are provided)
+```
 pytest tests/
-
+```
 
 ## Dependencies
 Python
