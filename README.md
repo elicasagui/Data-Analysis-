@@ -110,23 +110,16 @@ notebooks/exploratory_analysis.ipynb
 
 **3.** Wich single borough has the largest standard deviation in the combined SAT score?
 
-## Key Insights
+## 🔍 Key Insights
 
-**1.** 
-- The best math results in NYC schools are:
-  
-![image](https://github.com/user-attachments/assets/65fa491f-3134-447e-a0ff-d1b0a3c2d129)
+| Insight ID | Description                                                                                      | Visualization                                            |
+|------------|--------------------------------------------------------------------------------------------------|----------------------------------------------------------|
+| 1          | The best-performing NYC schools in math are:                                                     | ![best_math_results](notebooks/best_math_results.png)                |
+| 2          | The top 10 performing schools based on combined SAT scores are:                                  | ![10_performing_schools_based_on_the_combined_SAT_scores](notebooks/10_performing_schools_based_on_the_combined_SAT_scores.png)               |
+| 3          | The borough with the highest standard deviation in combined SAT scores is:                       | ![largest_standard_deviation_in_the_combined_SAT_score](notebooks/largest_standard_deviation_in_the_combined_SAT_score.png)              |
 
-**2.** 
-- The top 10 performing schools based on the combined SAT scores are: 
-![image](https://github.com/user-attachments/assets/a450a10a-be72-40f9-8a4a-dffeed5694b4)
+- Full analysis available in [`exploratory_analysis.ipynb`](notebooks/exploratory_analysis.ipynb).
 
-**3.**
-- The largest standard deviation in the combined SAT score is:
-  ![image](https://github.com/user-attachments/assets/e22e0cbd-35a5-489f-8693-e5ec3dac8d29)
-
-
-Full analysis available in [exploratory_analysis.ipynb](notebooks/exploratory_analysis.ipynb).
 
 ## RUNNING TESTS
 
