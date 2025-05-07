@@ -10,8 +10,9 @@ This project analyzes standardized test results from New York City public school
 │   └── schools.csv
 │
 ├── notebooks/            # Jupyter notebooks for EDA and testing
+│   └── images
 │   └── exploratory_analysis.ipynb
-│   └── test         
+│   └── test       
 ├── src/                  # Source code for analysis
     ├── __init__.py                # Makes src a Python package
     ├── load_data.py               # Functions to load and validate datasets
