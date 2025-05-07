@@ -115,9 +115,9 @@ notebooks/exploratory_analysis.ipynb
 
 | Insight ID | Description                                                                                      | Visualization                                            |
 |------------|--------------------------------------------------------------------------------------------------|----------------------------------------------------------|
-| 1          | The best-performing NYC schools in math are:                                                     | ![best_math_results](notebooks/best_math_results.png)                |
-| 2          | The top 10 performing schools based on combined SAT scores are:                                  | ![10_performing_schools_based_on_the_combined_SAT_scores](notebooks/10_performing_schools_based_on_the_combined_SAT_scores.png)               |
-| 3          | The borough with the highest standard deviation in combined SAT scores is:                       | ![largest_standard_deviation_in_the_combined_SAT_score](notebooks/largest_standard_deviation_in_the_combined_SAT_score.png)              |
+| 1          | The best-performing NYC schools in math are:                                                     | ![best_math_results](notebooks/images/best_math_results.png)                |
+| 2          | The top 10 performing schools based on combined SAT scores are:                                  | ![10_performing_schools_based_on_the_combined_SAT_scores](notebooks/images/10_performing_schools_based_on_the_combined_SAT_scores.png)               |
+| 3          | The borough with the highest standard deviation in combined SAT scores is:                       | ![largest_standard_deviation_in_the_combined_SAT_score](notebooks/images/largest_standard_deviation_in_the_combined_SAT_score.png)              |
 
 - Full analysis available in [`exploratory_analysis.ipynb`](notebooks/exploratory_analysis.ipynb).
 
