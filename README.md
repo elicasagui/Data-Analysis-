@@ -34,7 +34,7 @@ This project analyzes standardized test results from New York City public school
 (create the folder if it does not exist)
 
 mkdir -p data/
-mv ~/Downloads/*.csv data/
+mv ~/Downloads/*****.csv data/
 
 ## Data Description
 - **schools.csv**  
@@ -95,7 +95,7 @@ python main.py
 jupyter notebook
 ```
 
-This will open a tab in your browser with an interface where you can navigate to the repository.
+This will open a new browser tab with an interface that lets you navigate through the repository.
 ![image](https://github.com/user-attachments/assets/7745b2fd-dd66-4c04-b812-3c9874702aeb)
 
 
@@ -110,7 +110,7 @@ notebooks/exploratory_analysis.ipynb
 
 **3.** Wich single borough has the largest standard deviation in the combined SAT score?
 
-## 🔍 Key Insights
+## Key Insights
 
 | Insight ID | Description                                                                                      | Visualization                                            |
 |------------|--------------------------------------------------------------------------------------------------|----------------------------------------------------------|
