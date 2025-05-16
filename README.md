@@ -68,7 +68,7 @@ source venv/bin/activate
 ```
 **If PowerShell’s execution policy is blocking script activation for security reasons**
 
-![setup error 1](https://github.com/user-attachments/assets/6acb5759-9314-48a3-82f4-beb5d5a4c98e)
+![setup error 1](notebooks/images/setup error 1.png)
 
 **Quick and Safe Fix (temporary for current session only)**
 
@@ -98,7 +98,7 @@ jupyter notebook
 ```
 
 This will open a new browser tab with an interface that lets you navigate through the repository.
-![image](https://github.com/user-attachments/assets/7745b2fd-dd66-4c04-b812-3c9874702aeb)
+![jupyter open tap.png](notebooks/images/jupyter open tap.png)
 
 
 **6 Open and run the notebook**
