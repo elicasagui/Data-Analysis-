@@ -1,164 +1,155 @@
-# NYC Public Schools Test Results – Exploratory Data Analysis
+<!DOCTYPE html>
+<html lang="en">
 
-## Project Overview
-This project analyzes standardized test results from New York City public schools.It includes a exploratory data analysis, and visualization using Python libraries such as pandas, matplotlib, and seaborn.The goal is to uncover patterns in student performance across boroughs, grades, and demographic groups.
+</head>
+<body>
+  <h1>NYC Public Schools Test Results – Exploratory Data Analysis</h1>
 
-## Contents
-```
-# NYC_Public_Schools_Test_Results_Data_Analysis/
-├── data/                 # CSV files go here
-│   └── schools.csv
-│
-├── notebooks/            # Jupyter notebooks for EDA and testing
-│   └── images
-│   └── exploratory_analysis.ipynb
-│   └── test       
-├── src/                  # Source code for analysis
-    ├── __init__.py                # Makes src a Python package
-    ├── load_data.py               # Functions to load and validate datasets
-    ├── clean_data.py              # Cleaning and preprocessing functions
-    ├── analyze.py                 # EDA and summary statistics
-    ├── visualize.py               # Plotting functions (e.g., seaborn/matplotlib)
-    └── utils.py                   # Helper functions (e.g., file paths, formatting)
-├── main.py               # Main execution script
-├── requirements.txt      # Python dependencies
-└── README.txt            # This file
-```
-## Data Instructions
+  <h2>Project Overview</h2>
+  <p>This project analyzes standardized test results from New York City public schools. It includes exploratory data analysis and visualization using Python libraries such as pandas, matplotlib, and seaborn. The goal is to uncover patterns in student performance across boroughs, grades, and demographic groups.</p>
 
-**1. Visit NYC Open Data portal**
- https://opendata.cityofnewyork.us/
+  <h2>Contents</h2>
+  <p>This repository is organized as follows:</p>
+  <pre><code># NYC_Public_Schools_Test_Results_Data_Analysis/
+├── data/                 # Raw dataset(s)
+│   └── schools.csv       # Main dataset used in analysis
+├── notebooks/            # Jupyter notebooks for EDA and visualization
+│   └── images            # Folder containing plots and graphics
+│   └── exploratory_analysis.ipynb  # Main notebook
+│   └── test              # Temporary or test notebooks
+├── src/                  # Python scripts for modularized functions
+│   ├── __init__.py       # Package initializer
+│   ├── load_data.py      # Functions to load and validate datasets
+│   ├── clean_data.py     # Data cleaning and preprocessing
+│   ├── analyze.py        # EDA and summary statistics functions
+│   ├── visualize.py      # Plotting functions using seaborn/matplotlib
+│   └── utils.py          # Utility functions (e.g., path management)
+├── main.py               # Script to orchestrate full analysis
+├── requirements.txt      # List of dependencies
+└── README.txt            # This README file
+</code></pre>
 
-**2. Search and download relevant datasets (e.g., test scores)**
+  <h2>Data Instructions</h2>
+  <ol>
+    <li>Visit <a href="https://opendata.cityofnewyork.us/">NYC Open Data portal</a></li>
+    <li>Search and download relevant datasets (e.g., test scores)</li>
+    <li>Move the downloaded CSV files into the <code>data/</code> directory</li>
+  </ol>
+  <pre><code>mkdir -p data/
+mv ~/Downloads/*****.csv data/</code></pre>
 
-**3. Move the downloaded CSV files into the `data/` directory**
-(create the folder if it does not exist)
+  <h2>Data Description</h2>
+  <p>The <code>schools.csv</code> file includes test results and school metadata such as:</p>
+  <ul>
+    <li><code>school_id</code> – Unique school identifier</li>
+    <li><code>district</code> – School district number</li>
+    <li><code>math_score</code> – Average math test score</li>
+    <li><code>reading_score</code> – Average reading test score</li>
+    <li><code>attendance_rate</code> – Percentage of students attending school annually</li>
+  </ul>
 
-mkdir -p data/
-mv ~/Downloads/*****.csv data/
+  <h2>Installation Steps</h2>
+  <ol class="steps">
+    <li><strong>Clone the repository:</strong>
+      <pre><code>git clone https://github.com/elicasagui/NYC_Public_Schools_Test_Results_Data_Analysis.git
+cd NYC_Public_Schools_Test_Results_Data_Analysis</code></pre>
+    </li>
+    <li><strong>Create and activate a virtual environment:</strong>
+      <pre><code>python -m venv venv</code></pre>
+      <p><em>On Windows:</em></p>
+      <pre><code>.\venv\Scripts\Activate</code></pre>
+      <p><em>On macOS/Linux:</em></p>
+      <pre><code>source venv/bin/activate</code></pre>
+    </li>
+    <li><strong>Fix PowerShell execution policy (if needed):</strong>
+      <p>Open PowerShell as Administrator and run:</p>
+      <pre><code>Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass</code></pre>
+      <p>Then activate your virtual environment again:</p>
+      <pre><code>.\venv\Scripts\Activate</code></pre>
+         <div class="image-container">
+    <img src="notebooks/images/setup_error_1.png" alt="setup error 1">
+  </div>
+    </li>
+    <li><strong>Install dependencies:</strong>
+      <pre><code>pip install -r requirements.txt</code></pre>
+    </li>
+    <li><strong>Run main script:</strong>
+      <pre><code>python main.py</code></pre>
+    </li>
+    <li><strong>Launch Jupyter Notebook:</strong>
+      <pre><code>jupyter notebook</code></pre>
+    </li>
+  </ol>
 
-## Data Description
-- **schools.csv**  
-  Contains school-level test performance for the latest academic year, including:  
-  - `school_id`         — Unique identifier for each school  
-  - `district`          — NYC school district code  
-  - `math_score`        — Average math test score  
-  - `reading_score`     — Average reading test score  
-  - `attendance_rate`   — Annual attendance percentage  
-  - _… plus additional demographic and performance metrics._
+  <h2>Project Questions</h2>
+  <ul>
+    <li>Which NYC schools have the best math results?</li>
+    <li>What are the top 10 performing schools based on the combined SAT scores?</li>
+    <li>Which borough has the largest standard deviation in SAT scores?</li>
+  </ul>
 
-## Installation Steps
+  <h2>Key Insights</h2>
+  <table border="1">
+    <tr>
+      <th>Insight ID</th>
+      <th>Description</th>
+      <th>Visualization</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Best-performing NYC schools in math</td>
+      <td>
+        <div class="image-container">
+          <img src="notebooks/images/best_math_results.png" alt="best math results">
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Top 10 schools by combined SAT scores</td>
+      <td>
+        <div class="image-container">
+          <img src="notebooks/images/10_performing_schools_based_on_the_combined_SAT_scores.png" alt="top 10 schools">
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Borough with highest SAT score deviation</td>
+      <td>
+        <div class="image-container">
+          <img src="notebooks/images/largest_standard_deviation_in_the_combined_SAT_score.png" alt="largest deviation">
+        </div>
+      </td>
+    </tr>
+  </table>
 
-**1. Clone the repository**
-```
-git clone https://github.com/elicasagui/NYC_Public_Schools_Test_Results_Data_Analysis.git
-cd NYC_Public_Schools_Test_Results_Data_Analysis
-```
-**2. (Optional) Create and activate a virtual environment**
-```
-python -m venv venv
-```
--On Windows
-```
-.\venv\Scripts\Activate
-```
--On macOS/Linux
-```
-source venv/bin/activate
-```
-**If PowerShell’s execution policy is blocking script activation for security reasons**
+  <p>See full analysis in <a href="notebooks/exploratory_analysis.ipynb">exploratory_analysis.ipynb</a>.</p>
 
-![setup error 1](notebooks/images/setup_error_1.png)
+  <h2>Running Tests</h2>
+  <p>Ensure <code>pytest</code> is installed and run:</p>
+  <pre><code>pip install pytest
+pytest tests/</code></pre>
 
-**Quick and Safe Fix (temporary for current session only)**
+  <h2>Dependencies</h2>
+  <ul>
+    <li>Python</li>
+    <li>pandas</li>
+    <li>numpy</li>
+    <li>matplotlib</li>
+    <li>seaborn</li>
+    <li>jupyter</li>
+  </ul>
 
-Open PowerShell as Administrator
-(Right-click PowerShell → “Run as administrator”).
+  <h2>License</h2>
+  <p>This project was developed during a DataCamp data science course.</p>
 
-Run this command to temporarily allow scripts only for this session:
-```
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-```
-Now activate your virtual environment again:
-```
-.\venv\Scripts\Activate
-```
-**3. Install required packages**
-```
-pip install -r requirements.txt
-```
+  <h2>Created by</h2>
+  <p>
+    Eliecer Castro<br>
+    Data Scientist<br>
+    GitHub link: <a href="https://github.com/elicasagui/NYC_Public_Schools_Test_Results_Data_Analysis.git">NYC Schools Repo</a>
+  </p>
+</body>
+</html>
 
-**4. Run main script to verify setup**
-```
-python main.py
-```
-**5 Launch Jupyter Notebook**
-```
-jupyter notebook
-```
-
-This will open a new browser tab with an interface that lets you navigate through the repository.
-![jupyter open tap.png](notebooks/images/jupyter_open_tap.png)
-
-
-**6 Open and run the notebook**
-```
-notebooks/exploratory_analysis.ipynb
-```
-## Project Questions
-**1.** Which NYC schools have the best math results?
-
-**2.** What are the top 10 performing schools based on the combined SAT scores?
-
-**3.** Wich single borough has the largest standard deviation in the combined SAT score?
-
-## Key Insights
-
-| Insight ID | Description                                                                                      | Visualization                                            |
-|------------|--------------------------------------------------------------------------------------------------|----------------------------------------------------------|
-| 1          | The best-performing NYC schools in math are:                                                     | ![best_math_results](notebooks/images/best_math_results.png)                |
-| 2          | The top 10 performing schools based on combined SAT scores are:                                  | ![10_performing_schools_based_on_the_combined_SAT_scores](notebooks/images/10_performing_schools_based_on_the_combined_SAT_scores.png)               |
-| 3          | The borough with the highest standard deviation in combined SAT scores is:                       | ![largest_standard_deviation_in_the_combined_SAT_score](notebooks/images/largest_standard_deviation_in_the_combined_SAT_score.png)              |
-
-- Full analysis available in [`exploratory_analysis.ipynb`](notebooks/exploratory_analysis.ipynb).
-
-
-## RUNNING TESTS
-
- Make sure pytest is installed
- ```
-pip install pytest
-```
-
-Run tests (if test scripts are provided)
-```
-pytest tests/
-```
-
-## Dependencies
-Python
-
-pandas
-
-numpy
-
-matplotlib
-
-seaborn
-
-jupyter
-
-(See requirements.txt for exact versions.)
-
-## License
-This project from Data Camp scientist's course.
-
-## Contact
-For questions or collaboration inquiries, please contact:
-Eliecer Castro
-
-– Data Scientist
-
-– elicasagui@gmail.com
-
-– GitHub repository's link: https://github.com/elicasagui/NYC_Public_Schools_Test_Results_Data_Analysis.git
