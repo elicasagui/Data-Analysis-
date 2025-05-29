@@ -1,77 +1,88 @@
-# src/dashboard.py
-
 import streamlit as st
 import pandas as pd
-import plotly.express as px
+import matplotlib.pyplot as plt
 
-from src.load_data import load_test_results
-from src.clean_data import clean_scores
+from src.visualize import (
+    plot_score_distribution,
+    plot_average_by_borough,
+    plot_top_decile_schools
+)
 
-# 1. Configuración de página
+# 1. Page configuration
 st.set_page_config(
     page_title="Interactive NYC Schools Dashboard",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
-# 2. Título
+# 2. Title
 st.title("📊 NYC Public Schools Test Results Dashboard")
 
-# 3. Carga y limpieza
-df = load_test_results("data/test_results_2022.csv")
-df = clean_scores(df)
+# 3. Data loading
+@st.cache_data
+def load_data(path):
+    return pd.read_csv(path)
 
-# 4. Sidebar de filtros
-boroughs = df['borough'].unique().tolist()
-selected = st.sidebar.multiselect(
+data_path = "data/schools.csv"
+df = load_data(data_path)
+
+# 4. Sidebar filters
+st.sidebar.header("Filters")
+# Borough filter
+boroughs = df["borough"].unique().tolist()
+selected_boroughs = st.sidebar.multiselect(
     "Select Boroughs", boroughs, default=boroughs
 )
-min_score = st.sidebar.slider("Minimum Score", 0, 100, 50)
+# Metric filter
+grid_cols = [c for c in df.columns if c.startswith("average_")] + ["percent_tested"]
+selected_metric = st.sidebar.selectbox(
+    "Choose Metric", grid_cols, index=0
+)
+# Minimum threshold slider
+min_threshold = st.sidebar.slider(
+    f"Minimum {selected_metric}",
+    float(df[selected_metric].min()),
+    float(df[selected_metric].max()),
+    float(df[selected_metric].min())
+)
 
-# 5. Filtrado dinámico
-df_filt = df[
-    (df['borough'].isin(selected)) &
-    (df['score'] >= min_score)
+# Apply dynamic filtering
+df_filtered = df[
+    (df["borough"].isin(selected_boroughs)) &
+    (df[selected_metric] >= min_threshold)
 ]
 
-# 6. Métricas clave
+# 5. Display key metrics
+st.header("Key Metrics")
 col1, col2, col3 = st.columns(3)
-col1.metric("Total Records", len(df_filt))
-col2.metric("Average Score", round(df_filt['score'].mean(), 2))
-col3.metric("Boroughs Selected", len(selected))
-
-# 7. Gráfico de proporciones (pie)
-st.subheader("Score Distribution by Borough")
-fig1 = px.pie(
-    df_filt.groupby('borough').size().reset_index(name='count'),
-    names='borough', values='count',
-    title="Proportion of Records"
+col1.metric("Total Records", len(df_filtered))
+col2.metric(
+    f"Average {selected_metric}",
+    round(df_filtered[selected_metric].mean(), 2) if len(df_filtered) else 0
 )
-st.plotly_chart(fig1, use_container_width=True)
+col3.metric("Boroughs Selected", len(selected_boroughs))
 
-# 8. Histograma interactivo
-st.subheader("Score Histogram")
-fig2 = px.histogram(
-    df_filt, x='score', nbins=20,
-    title="Score Frequency"
-)
-st.plotly_chart(fig2, use_container_width=True)
+# 6. Visualization Tabs
+tabs = st.tabs(["Distribution", "Average by Borough", "Top Decile Schools"])
 
-# 9. Mapa de ubicación aproximada
-#    Si el CSV incluye lat/lon, úsalo; si no, generamos puntos ficticios
-coords = {
-    "Manhattan": (40.7831, -73.9712),
-    "Brooklyn":  (40.6782, -73.9442),
-    "Queens":    (40.7282, -73.7949),
-    "Bronx":     (40.8448, -73.8648),
-    "Staten Island": (40.5795, -74.1502)
-}
-df_map = df_filt.copy()
-df_map['lat'] = df_map['borough'].map(lambda b: coords[b][0])
-df_map['lon'] = df_map['borough'].map(lambda b: coords[b][1])
+with tabs[0]:
+    st.subheader("Score Distribution")
+    fig, ax = plt.subplots()
+    plot_score_distribution(df_filtered, column=selected_metric, ax=ax)
+    st.pyplot(fig)
 
-st.subheader("Geographic Distribution")
-st.map(df_map[['lat', 'lon']])
+with tabs[1]:
+    st.subheader("Average by Borough")
+    fig, ax = plt.subplots()
+    plot_average_by_borough(df_filtered, column=selected_metric, ax=ax)
+    st.pyplot(fig)
 
-# 10. Tabla de datos filtrados (opcional)
+with tabs[2]:
+    st.subheader("Top Decile Schools")
+    fig, ax = plt.subplots()
+    plot_top_decile_schools(df_filtered, column=selected_metric, ax=ax)
+    st.pyplot(fig)
+
+# 7. Show raw data
 with st.expander("Show Filtered Data"):
-    st.dataframe(df_filt.reset_index(drop=True))
+    st.dataframe(df_filtered.reset_index(drop=True))
