@@ -11,10 +11,10 @@
   <h2>Contents</h2>
   <p>This repository is organized as follows:</p>
   <pre><code># NYC_Public_Schools_Test_Results_Data_Analysis/
-├── data/                 # Raw dataset(s)
-│   └── schools.csv       # Main dataset used in analysis
-├── notebooks/            # Jupyter notebooks for EDA and visualization
-│   └── images            # Folder containing plots and graphics
+├── data/                # Raw dataset(s)
+│   └── schools.csv      # Main dataset used in analysis
+├── notebooks/           # Jupyter notebooks for EDA and visualization
+│   └── images           # Folder containing plots and graphics
 │   └── exploratory_analysis.ipynb  # Main notebook
 │   └── test              # Temporary or test notebooks
 ├── src/                  # Python scripts for modularized functions
@@ -24,6 +24,13 @@
 │   ├── analyze.py        # EDA and summary statistics functions
 │   ├── visualize.py      # Plotting functions using seaborn/matplotlib
 │   └── utils.py          # Utility functions (e.g., path management)
+└── tests/              # Unit tests for all src modules, using pytest
+├── test_load_data.py   # Verifies that load_data.load_test_results correctly reads CSVs, handles missing files, and logs shape info
+├── test_clean_data.py  # Checks clean_data.clean_scores removes invalid entries, coerces types, and normalizes column names
+├── test_analyze.py     # Ensures analyze.average_scores_by_borough computes borough‐level averages and raises errors on bad input
+├── test_visualize.py   # Confirms visualize.plot_score_distribution creates a new Matplotlib figure and validates missing‐column handling
+└── test_utils.py       # Tests utils.get_data_path builds the correct filepath (e.g. "data/<filename>")
+│    
 ├── main.py               # Script to orchestrate full analysis
 ├── requirements.txt      # List of dependencies
 └── README.txt            # This README file
