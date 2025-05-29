@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    # Directorio donde está tu requirements.txt
+    directory: "../requirements.txt" 
+    schedule:
+      # Cada semana Dependabot buscará actualizaciones
+      interval: "weekly"
+    # Límite de PRs abiertos simultáneamente
+    open-pull-requests-limit: 5
+    # Opcional: automatizar merge si pasa tests
+    # automerged_updates:
+    #   - match:
+    #       update_type: "security"
