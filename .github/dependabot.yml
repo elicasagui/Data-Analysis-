@@ -2,7 +2,7 @@ version: 2
 updates:
   - package-ecosystem: "pip"
     # Directorio donde está tu requirements.txt
-    directory: "../requirements.txt" 
+    directory: "/requirements.txt" 
     schedule:
       # Cada semana Dependabot buscará actualizaciones
       interval: "weekly"
