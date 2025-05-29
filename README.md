@@ -77,8 +77,10 @@ cd NYC_Public_Schools_Test_Results_Data_Analysis</code></pre>
     <img src="notebooks/images/setup_error_1.png" alt="setup error 1">
   </div>
     </li>
-    <li><strong>Install dependencies:</strong>
-      <pre><code>pip install -r requirements.txt</code></pre>
+    <li>Install dependencies:<br>
+      <pre><code>python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+      </code></pre>
     </li>
     <li><strong>Run main script:</strong>
       <pre><code>python main.py</code></pre>
