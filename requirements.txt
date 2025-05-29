@@ -3,7 +3,7 @@ numpy
 matplotlib
 seaborn
 jupyterlab
-
-streamli
+streamlit
 plotly
 pydeck
+pytest
