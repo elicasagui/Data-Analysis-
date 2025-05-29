@@ -89,6 +89,30 @@ python -m pip install -r requirements.txt
       <pre><code>jupyter notebook</code></pre>
     </li>
   </ol>
+<h2>Streamlit Dashboard</h2>
+<p>To explore the data interactively, launch the Streamlit app:</p>
+<ol class="steps">
+  <li><strong>Activate your virtual environment</strong> (if not already active):<br>
+    <pre><code>Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass</code></pre>
+    <pre><code>.\venv\Scripts\Activate</code></pre>
+  </li>
+  <li><strong>Run the Streamlit app:</strong><br>
+    <pre><code>streamlit run src/dashboard.py</code></pre>
+  </li>
+  <li>Open your browser at <code>http://localhost:8501</code> to view the dashboard.</li>
+</ol>
+<p>Use the sidebar controls to:</p>
+<ul>
+  <li>Select one or more boroughs</li>
+  <li>Choose which metric to display (math, reading, writing averages or percent tested)</li>
+  <li>Adjust the minimum threshold for that metric</li>
+</ul>
+<p>The dashboard provides three tabs:</p>
+<ul>
+  <li><strong>Distribution:</strong> histogram of the selected metric</li>
+  <li><strong>Average by Borough:</strong> bar chart of borough averages</li>
+  <li><strong>Top Decile Schools:</strong> top-10 schools in the top 10% for the metric</li>
+</ul>
 
   <h2>Project Questions</h2>
   <ul>
